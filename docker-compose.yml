@@ -1,0 +1,17 @@
+version: "3"
+services:
+    2fa-api:
+        environment:
+            - NODE_ENV=development
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        # volumes:
+        #     - ./:/usr/app
+        container_name: api-module
+        expose:
+            - "4000"
+        ports:
+            - "4000:4000"
+        command: npm run dev
+

@@ -1,0 +1,21 @@
+FROM node:lts-alpine
+WORKDIR /usr/app
+COPY package*.json ./
+COPY tsconfig.json ./
+RUN npm install
+
+# !Need to add build pack and script
+RUN npm run build 
+
+## this is stage two , where the app actually runs
+FROM node:lts-alpine
+WORKDIR /usr/app
+COPY package*.json ./
+COPY tsconfig.json ./
+RUN npm install
+
+# ! Need prod steps finalised
+# COPY --from=0 /usr/dist .
+# RUN npm install pm2 -g
+# EXPOSE 80
+# CMD ["pm2-runtime","app.js"]

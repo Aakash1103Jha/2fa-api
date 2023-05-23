@@ -39,5 +39,9 @@
 -   If the token has expired, the user should see a ConfirmationLinkExpired error, and should be redirected back to the sign up page.
 -   If the token is valid, the user data should be extracted and saved into the database. Once successful, the user should see a “Account Created Successfully” message, and be redirected to login page.
 
+![Auth Flow Diagrams-2](https://github.com/Aakash1103Jha/2fa-api/assets/52240895/d8fdf632-61e8-446a-a621-41f44a850bb3)
+
+![Auth Flow Diagrams](https://github.com/Aakash1103Jha/2fa-api/assets/52240895/4b24d7a3-e492-429a-be1e-b4310d260012)
+
 [Integration Docs]: https://docs.sendgrid.com/for-developers/sending-email/api-getting-started
 

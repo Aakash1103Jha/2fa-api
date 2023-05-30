@@ -4,7 +4,10 @@ export type HttpErrorType =
 	| "WeakPasswordError"
 	| "ConfirmationLinkExpiredError"
 	| "MandatoryDataMissingError"
-	| "EndpointNotFoundError";
+	| "EndpointNotFoundError"
+	| "UserNotFoundError"
+	| "IncorrectPasswordError"
+	| "AuthenticationTokenExpiredError";
 
 export type ErrorType = { message: string; statusCode: number };
 
@@ -32,6 +35,18 @@ const ErrorMessageMap: { [key in HttpErrorType]: ErrorType } = {
 	EndpointNotFoundError: {
 		message: "API endpoint not found, or implemented",
 		statusCode: 404,
+	},
+	UserNotFoundError: {
+		message: "User with this email does not exist",
+		statusCode: 404,
+	},
+	IncorrectPasswordError: {
+		message: "Incorrect password",
+		statusCode: 400,
+	},
+	AuthenticationTokenExpiredError: {
+		message: "Authentication token expired. Access denied. Please login again.",
+		statusCode: 401,
 	},
 };
 
